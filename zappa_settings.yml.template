@@ -1,0 +1,23 @@
+---
+prod:
+  apigateway_enabled: false
+  aws_region: [your-region-here]
+  events:
+    - function: update_status_groups.aws_lambda
+      expression: rate(4 hours)
+      kwargs:
+        STATUS_NAME: Has voters in state
+        DB_QUERY: has_voters.sql
+  keep_warm: false
+  lambda_handler: update_status_groups.aws_lambda
+  memory_size: 2048
+  project_name: reach-groups
+  role_name: [your-role-name-here]
+  runtime: python3.6
+  s3_bucket: [your-s3-bucket-here]
+  timeout_seconds: 120
+  vpc_config:
+    SubnetIds:
+      - [your-subnet-ids-here]
+    SecurityGroupIds:
+      - [your-security-group-ids-here]
