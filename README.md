@@ -1,4 +1,4 @@
-# Reach groups
+# Reach groups - Decommissioned as of 8/16/22
 
 These Python 3.6 scripts create and update Reach.vote user groups to facilitate sending notifications to Reach users based on various status-state combinations, e.g. everyone with unregistered voter contacts in Florida.
 
